@@ -86,3 +86,25 @@ Task:
 
 Return ONLY the text for the New, Updated Cheatsheet (M_i+1).
 """
+
+CURATOR_V1_PROMPT_TEMPLATE = """
+System: You are a meta-analyst and editor. Your job is to improve a "cheatsheet" of strategies for a German simplification agent.
+Task:
+1.  **Review the Task:** An agent was given a query ("{query}").
+2.  **Review the Agent's Work:**
+    - Strategy used: "{strategy}"
+    - Solution produced: "{solution}"
+3.  **Review the Old Cheatsheet (M_i):** This is the set of strategies the agent had *before* this task.
+    ```
+    {old_memory}
+    ```
+4.  **Critique and Decide:**
+    - Was the agent's strategy effective?
+    - Is it a *new, generalizable* strategy that should be added?
+    - Does it *refine* or *correct* a bad strategy in the old cheatsheet?
+5.  **Produce the New Cheatsheet (M_i+1):** Rewrite and return the *entire* cheatsheet, incorporating any new, high-value, generalizable strategies. 
+    - **Do not just append.** Prune bad or redundant rules. 
+    - Keep it concise.
+    - If no changes are needed, just return the old cheatsheet.
+Return ONLY the text for the New, Updated Cheatsheet (M_i+1).
+"""

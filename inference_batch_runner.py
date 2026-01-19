@@ -50,7 +50,7 @@ def run_agent_sequential(
 
 def main():
     parser = argparse.ArgumentParser(description="Sequential Batch Runner for ACE Agents")
-    parser.add_argument("--agent-script", default="agent_v2.py", help="Agent script to run")
+    parser.add_argument("--agent-script", default="agent_3node.py", help="Agent script to run")
     parser.add_argument("--input-dir", default=DEFAULT_INPUT_DIR, help="Directory containing .txt files")
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_BASE_DIR, help="Base directory for results")
     parser.add_argument("--models", nargs="+", default=DEFAULT_MODELS, help="List of models to run")
