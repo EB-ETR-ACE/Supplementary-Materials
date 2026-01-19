@@ -1,0 +1,6 @@
+spacy
+pyphen
+wordfreq
+bert-score
+pandas
+tqdm
